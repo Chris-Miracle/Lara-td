@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('projects', 'App\Http\Controllers\ProjectController');
+    Route::resource('tasks', 'App\Http\Controllers\TaskController');
+    Route::resource('subtasks', 'App\Http\Controllers\SubtaskController');
+});
+
+
+
+
+
+
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -13,8 +13,8 @@
                         <h1>24&nbsp;h<i class="fa fa-clock-o"></i>urs<sup><em class="font70"><span class="text-cyan">beta</span></em></sup>&nbsp;</h1>
                         <p>Get Shit Done!</p>
                         <p>
-                            <a href="{{ url('auth/login') }}" class="btn btn-cyan">Login</a>
-                            <a href="{{ url('auth/register') }}" class="btn btn-green">Register</a>
+                            <a href="{{ route('login') }}" class="btn btn-cyan">Login</a>
+                            <a href="{{ route('register') }}" class="btn btn-green">Register</a>
                         </p>
                     </div>
                 </div>

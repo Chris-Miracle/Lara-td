@@ -34,7 +34,7 @@
                 </ul>
             </li>
             @else
-            <li><a href="{{ url('/auth/login') }}">Login</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
             @endif
             {{--<li><a href="#sidenav" id="menu">MENU&nbsp;<i class="fa fa-bars"></i></a></li>--}}
             <li>
