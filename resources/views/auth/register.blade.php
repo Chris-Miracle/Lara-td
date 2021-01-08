@@ -24,7 +24,7 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<div class="form-group">
 							<label class="col-lg-12 col-md-12 col-sm-12 col-xs-12 control-label">Name</label>
@@ -64,7 +64,7 @@
 
 						<div class="form-group">
                             <div class="col-lg-12 col-md-12 col-ms-12 col-xs-12">
-                                <a href="{{ url('/auth/login') }}" class="btn btn-block btn-cyan">Login</a>
+                                <a href="{{ route('login') }}" class="btn btn-block btn-cyan">Login</a>
                             </div>
 						</div>
 					</form>
