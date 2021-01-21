@@ -53,7 +53,7 @@
                         @endforeach
                     </table>
                 </div>
-                @else 
+                @else
                 <p>Sorry, no projects found today. Begin by creating a <a href="#createprojects" class="" data-toggle="modal">new project</a></p>
             @endif
         </div>

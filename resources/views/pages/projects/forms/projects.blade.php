@@ -9,7 +9,7 @@
 
 <div class="form-group">
     <div class="input-group">
-        <div class="input-group-addon">Description</div>
+        <div class="input-group-addon">Desc</div>
 
         {!! Form::textarea('desc', Input::old('desc'), ['rows' => '3', 'cols' => '3', 'class' => 'form-control', 'placeholder' => 'Project Description']) !!}
 
@@ -20,7 +20,7 @@
     <div class="input-group">
         <div class="input-group-addon">Due Date</div>
 
-        {!! Form::text('duedate', Input::old('duedate'), [ 'id' => 'datepicker', 'class' => 'form-control', 'placeholder' => 'Project Due Date']) !!}
+        {!! Form::date('duedate', Input::old('duedate'), [ 'id' => 'datepicker', 'class' => 'form-control', 'placeholder' => 'Project Due Date']) !!}
 
     </div>
 </div>
