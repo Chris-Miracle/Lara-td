@@ -30,7 +30,7 @@ class Project extends Model
 
     public function setdueDateAttributes($date)
     {
-        $thus->attribute['duedate'] = Carbon::parse($date);
+        $this->attribute['duedate'] = Carbon::parse($date);
     }
 
     public function user()

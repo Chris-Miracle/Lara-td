@@ -20,7 +20,7 @@
     <div class="input-group">
         <div class="input-group-addon">Due Date</div>
 
-        {!! Form::date('duedate', Input::old('duedate'), [ 'id' => 'datepicker', 'class' => 'form-control', 'placeholder' => 'Project Due Date']) !!}
+        {!! Form::text('duedate', Input::old('duedate'), [ 'id' => 'datepicker', 'class' => 'form-control datepicker', 'placeholder' => 'Project Due Date']) !!}
 
     </div>
 </div>

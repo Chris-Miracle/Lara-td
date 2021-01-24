@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Http\Request\ProjectRequest;
 use App\Models\User;
 use Carbon\Carbon;
 use Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Response;
 
 class ProjectController extends Controller
 {
@@ -40,9 +43,42 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
-        //
+        if($request->ajax()){
+
+            $slug = Str::slug($request->name);
+
+            Auth::user()->projects()->create([
+                'name' => $request->name,
+                'slug' => $slug,
+                'desc' => $request->desc,
+                'duedate' => $request->duedate
+            ]);
+
+            $response = [
+                'msg' => 'Awesome! Close window'
+            ];
+
+            return Response::json($response);
+
+        }
+        else
+        {
+
+            $slug = Str::slug($request->name);
+
+            Auth::user()->projects()->create([
+                'name' => $request->name,
+                'slug' => $slug,
+                'desc' => $request->desc,
+                'duedate' => $request->duedate
+            ]);
+
+
+            return redirect('projects')->with('success','Project'.ucwords($projects->name).'has been successfully created');
+
+        }
     }
 
     /**
